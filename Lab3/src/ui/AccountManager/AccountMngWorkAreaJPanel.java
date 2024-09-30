@@ -17,13 +17,13 @@ public class AccountMngWorkAreaJPanel extends javax.swing.JPanel {
       AccountDirectarory accountdirectarory;
     /**
      * Creates new form AccountMngWorkAreaJPanel
-     * @param comtainer
+     * @param Comtainer
      * @param directarory
      */
-    public AccountMngWorkAreaJPanel(JPanel comtainer, AccountDirectarory directarory) {
+    public AccountMngWorkAreaJPanel(JPanel Comtainer, AccountDirectarory directarory) {
         initComponents();
         
-        userProcessComtainer= comtainer;
+        userProcessComtainer= Comtainer;
         accountdirectarory = directarory;
         
        

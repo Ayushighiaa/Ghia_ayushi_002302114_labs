@@ -16,7 +16,7 @@ public class Account {
    private String bankName;
    private String routingNumber;
    private String accountNumber;
-   private Integer balance;
+   private int balance;
     
 
     public String getBankName() {
@@ -43,12 +43,18 @@ public class Account {
         this.accountNumber = accountNumber;
     }
 
-    public Integer getBalance() {
+    public int getBalance() {
         return balance;
+       
     }
 
     public void setBalance(Integer balance) {
         this.balance = balance;
+    }
+    
+   @Override
+    public String toString() {
+        return bankName;
     }
     
     

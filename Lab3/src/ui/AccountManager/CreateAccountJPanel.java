@@ -23,11 +23,11 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateAccountJPanel
      */
-    public CreateAccountJPanel(JPanel Comtainer, AccountDirectarory directarory) {
+    public CreateAccountJPanel(JPanel userProcessComtainer, AccountDirectarory accountdirectarory) {
         initComponents();
         
-        userProcessComtainer= Comtainer;
-        accountDirectarory = directarory;
+        this.userProcessComtainer= userProcessComtainer;
+       this.accountDirectarory = accountdirectarory;
                 
     }
 
@@ -158,7 +158,7 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
          try {
              balance = Integer.parseInt(txtBalance.getText());
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Please check the balance input.", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please check the balance input.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
          Account a = accountDirectarory.addAccount();

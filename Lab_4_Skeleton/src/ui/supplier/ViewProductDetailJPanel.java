@@ -225,30 +225,35 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
     
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        product.setPrice (Integer.parseInt(txtPrice.getText () ));
+        product.setPrice (Integer.parseInt(txtPrice.getText()));
         product.setName (txtName.getText());
-        saveFeatures ();
-        txtName. setEditable (false);
+        saveFeatures();
+        
+        txtName.setEditable(false);
         txtPrice.setEditable(false);
-        btnSave.setEnabled (false);
-        tblFeatures.setEnabled (false);
-        btnAddFeature. setEnabled (false) ;
-        btnRemoveFeature.setEnabled (false) ;
-        JOptionPane. showMessageDialog(this, "Product information saved");
+        btnSave.setEnabled(false);
+        tblFeatures.setEnabled(false);
+        btnAddFeature.setEnabled(false);
+        btnRemoveFeature.setEnabled(false);
+        
+        JOptionPane.showMessageDialog(this, "Product information saved", "Information", JOptionPane.INFORMATION_MESSAGE);
+        
         refreshTable();
         
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void saveFeatures() {
-        
-        DefaultTableModel model = (DefaultTableModel) tblFeatures.getModel () ;
-        for(int i = 0; i< model.getRowCount(); i++){
-            Feature currentFeature = product.getFeatures().get(i);
-            currentFeature. setName (tblFeatures.getValueAt (1, 0).toString ());
-            currentFeature.setValue(tblFeatures.getValueAt (3,1));
+        DefaultTableModel model = (DefaultTableModel) tblFeatures.getModel();
+       
+       for (int i =0; i < model.getRowCount() ; i++)
+       {
+           Feature currentFeature = product.getFeatures().get(i);
+           currentFeature.setName(tblFeatures.getValueAt(i,0).toString());
+           currentFeature.setValue(tblFeatures.getValueAt(i,1));
+       }
        
     }
-    }
+    
     private void btnAddFeatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddFeatureActionPerformed
         // TODO add your handling code here:
         Feature newFeature = product.addNewFeature();

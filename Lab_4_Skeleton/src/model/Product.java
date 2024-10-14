@@ -56,14 +56,18 @@ public class Product {
         this.price = price;
     }
 
+    public Feature addNewFeature(){
+        Feature f = new Feature(this);
+        features.add(f);
+        return f;
+    }
     
     @Override
     public String toString() {
         return name;
     }
 
-    public Feature addNewFeature() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   }
+ 
     
-}
+

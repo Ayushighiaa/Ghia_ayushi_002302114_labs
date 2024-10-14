@@ -42,7 +42,9 @@ public class ProductCatalog {
         }
         return null;
     }
-    
+    public ArrayList<Product> getProducts() {
+    return productCatalog;
+    }
     public int getProductCount(){
         return productCatalog.size();
     }
